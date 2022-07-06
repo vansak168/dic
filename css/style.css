@@ -1,0 +1,249 @@
+:root {
+    --search-box-height: 30px;
+    --word-height: 65px;
+    --chinese-text-color: green;
+    --pinyin-text-color: blue;
+    --khmer-text-color: red;
+
+
+    --chinese-text-hover-color: blue;
+    
+    --item-background:rgba(255, 255, 255, 0.5);
+    --dic-background:rgba(255, 255, 255, 0.5);
+    --item-hover:rgba(255, 255, 255, 0.75);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* user-select: none; */
+    transition: all .25s ease-in-out;
+    border: none;
+    outline: none;
+}
+body{
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/44/Ankor_Wat_temple.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.dic{
+    width: 70vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Center left > right */
+    align-items: center; /* Center top > bottom */
+}
+
+
+
+/* Search */
+.search{
+    width: 30%;
+    height: 90%;
+    padding: 4vh 1vw;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background: var(--dic-background);
+    border-right: solid 1px lemonchiffon;
+    border-radius: 12px 0 0 12px;
+}
+.search-box{
+    width: 100%;
+    height: var(--search-box-height);
+    border-radius: 4px;
+}
+.search-input{
+    width: 100%;
+    height: 100%;
+    color: blue;
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 0 12px;
+}
+.search-input::placeholder{
+    color: red;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+/* Search List */
+.items::-webkit-scrollbar, .example::-webkit-scrollbar{
+    display: none;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.items{
+    height: calc(100% - (30px + 4px));
+    margin-top: 4px;
+    border-radius: 4px;
+    overflow: auto;
+}
+.item{
+    margin: 4px 0;
+    padding: 4px 8px;
+    background: var(--item-background);
+    color: var(--chinese-text-color);
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 400;
+    border-radius: 4px;
+    border-left: solid 4px blue;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    opacity: .75;
+}
+.item:hover{
+    background: var(--item-hover);
+    color: var(--chinese-text-hover-color);
+    padding-left: 10px;
+    opacity: 1;
+}
+
+
+/* Demo */
+.demo{
+    width: 70%;
+    height: 90%;
+    padding: 4vh 1vw;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background: var(--dic-background);
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    flex-direction: column;
+}
+/* Word in demo */
+.word{
+    min-height: var(--word-height);
+    display: flex;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    border-left: solid 4px red;
+    background: var(--item-background);
+    opacity: 0;
+}
+.chinese-text, .pinyin-text, .khmer-text, .speech{
+    padding-left: 8px;
+    display: flex;
+    justify-content: center; /* Center left > right */
+    align-items: center; /* Center top > bottom */
+}
+.chinese-text{
+    color: var(--chinese-text-color);
+    font-size: 24px;
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 500;
+}
+.pinyin-text{
+    color: var(--pinyin-text-color);
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 300;
+    font-size: 20px;
+}
+.khmer-text{
+    color: var(--khmer-text-color);
+    font-family: 'Battambang', cursive;
+    font-weight: 500;
+    font-size: 20px;
+    /* font-family: khmer-word-font; */
+}
+.speech{
+    color: var(--pinyin-text-color);
+}
+/* Exemple in demo */
+.example{
+    height: calc(100% - var(--word-height) - 8px);
+    overflow: auto;
+    display: flexbox;
+    border-radius: 4px;
+    opacity: 0;
+}
+.example-item{
+    display: flex;
+    margin-bottom: 8px;
+    flex-direction: column;
+    border-radius: 4px;
+    border-left: solid 4px red;
+    background: var(--item-background);
+}
+.example-item:hover{
+    background: var(--item-hover);
+}
+.chinese-text-ex, .pinyin-text-ex, .khmer-text-ex, .speechExample{
+    padding: 0 8px;
+    margin: 2px 0;
+    display: flex;
+    justify-content: flex-start; /* Center left > right */
+    align-items: center; /* Center top > bottom */
+}
+.speech-example{
+    color: var(--pinyin-text-color);
+}
+.ch-speech{
+    display: flex;
+    align-items: center;
+}
+.chinese-text-ex{
+    color: green;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+.pinyin-text-ex{
+    color: rgb(16, 62, 231);
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 300;
+}
+.khmer-text-ex{
+    color: rgb(226, 19, 88);
+    font-family: 'Battambang', cursive;
+    font-weight: 300;
+}
+.demo-active{
+    opacity: 1;
+}
+
+
+
+
+
+
+
+/* Mobile Phone */
+@media only screen and (max-width: 768px) {
+    .dic{
+        width: 98%;
+    }
+    .search{
+        width: 25%;
+        height: 90%;
+        padding: 4vh 1vw;
+    }
+    .demo{
+        width: 75%;
+        height: 90%;
+        padding: 4vh 1vw;
+    }
+    .search-box{
+        width: 100%;
+        display: flex;
+    }
+    .search-input{
+        width: 100%;
+        text-align: center;
+    }
+    .search-btn{
+        display: none;
+    }
+    .item, .chinese-text, .khmer-text, .pinyin-text{
+        justify-content: center;
+    }
+}
