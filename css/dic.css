@@ -135,6 +135,7 @@ body{
 }
 .speech i{
     padding: 0;
+    color: var(--chinese-text-color);
     display: flex;
     align-items: center;
 }
@@ -197,7 +198,7 @@ body{
 .speech-example{
     margin: 2px 0;
     padding-left: 8px;
-    color: var(--pinyin-text-color);
+    color: var(--chinese-text-color);
     display: flex;
     justify-content: flex-start;
     align-items: center;
