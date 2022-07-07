@@ -4,7 +4,6 @@
     --chinese-text-color: rgb(255, 255, 255);
     --pinyin-text-color: rgb(185, 240, 160);
     --khmer-text-color: rgb(250, 170, 235);
-
     
     --item-text-hover-color: rgb(250, 250, 180);
     --dic-background:rgba(25, 25, 50, 0.5);
@@ -31,15 +30,14 @@ body{
     display: flex;
     flex-direction: row;
     height: calc(100vh - var(--nav-height));
-    box-shadow: 0 0 12px 4px rgba(180, 210, 240, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background: var(--dic-background);
 }
 /* Search */
 .search{
     width: 30%;
     padding: 4vh 1vw;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    background: var(--dic-background);
 }
 .search-box{
     width: 100%;
@@ -102,9 +100,6 @@ body{
 .demo{
     width: 70%;
     padding: 4vh 1vw;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    background: var(--dic-background);
     display: flex;
     flex-direction: column;
 }
@@ -135,7 +130,6 @@ body{
 }
 .speech i{
     padding: 0;
-    color: var(--chinese-text-color);
     display: flex;
     align-items: center;
 }
@@ -159,7 +153,8 @@ body{
 .example{
     height: calc(100% - var(--word-height) - 8px);
     overflow: auto;
-    display: flexbox;
+    display: flex;
+    flex-direction: column;
     border-radius: 4px;
     transform: scaleX(0);
     transform-origin: left;
@@ -198,7 +193,7 @@ body{
 .speech-example{
     margin: 2px 0;
     padding-left: 8px;
-    color: var(--chinese-text-color);
+    color: var(--pinyin-text-color);
     display: flex;
     justify-content: flex-start;
     align-items: center;

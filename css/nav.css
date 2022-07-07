@@ -35,8 +35,7 @@ body{
     width: 100%;
     height: var(--nav-height);
     padding: var(--nav-padding);
-    box-shadow: 0 4px 2px -2px rgb(255, 255, 255);
-    box-shadow: 0 0 12px 4px rgba(180, 210, 240, 0.75);
+    box-shadow: 0 4px 4px -2px rgb(255, 255, 255);
     background: var(--nav-bac-color);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
@@ -44,6 +43,7 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    transition: all .25s ease-out;
 }
 /* Logo */
 .logo{
@@ -223,7 +223,7 @@ body{
         width: 60%;
         padding-top: var(--nav-height);
         position: absolute;
-        display: block;
+        display: none;
         background-color: rgba(63, 53, 78, 0.95);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(16px);
@@ -231,7 +231,7 @@ body{
         right: 0;
         transform: scaleX(0);
         transform-origin: right;
-        transition: transform 0.25s ease-out;
+        transition: all 0.25s ease-out;
     }
     .menu-active{
         height: 100vh;
